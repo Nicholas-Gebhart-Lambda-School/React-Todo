@@ -25,6 +25,9 @@ class AddItemForm extends React.Component {
 
           console.log(this.state);
           this.props.addItem(this.state);
+          e.target.id = null;
+          e.target.when.value = "";
+          e.target.what.value = "";
           this.setState({
             id: null,
             what: "",
