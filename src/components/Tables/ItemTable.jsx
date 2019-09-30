@@ -19,7 +19,15 @@ class ItemTable extends React.Component {
                 <td>{todo.when}</td>
                 <td>
                   <button className="button muted-button">Edit</button>
-                  <button className="button muted-button">Delete</button>
+                  <button
+                    className="button muted-button"
+                    onClick={() => {
+                      this.props.deleteItem(todo.id);
+                      console.log(todo.id);
+                    }}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))

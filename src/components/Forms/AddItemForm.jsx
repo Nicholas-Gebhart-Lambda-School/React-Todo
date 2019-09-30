@@ -23,11 +23,7 @@ class AddItemForm extends React.Component {
           e.preventDefault();
           if (!this.state.what || !this.state.when) return;
 
-          console.log(this.state);
           this.props.addItem(this.state);
-          e.target.id = null;
-          e.target.when.value = "";
-          e.target.what.value = "";
           this.setState({
             id: null,
             what: "",
@@ -39,14 +35,14 @@ class AddItemForm extends React.Component {
         <input
           type="text"
           name="what"
-          value={this.what}
+          value={this.state.what}
           onChange={this.handleInput}
         />
         <label>When</label>
         <input
           type="text"
           name="when"
-          value={this.when}
+          value={this.state.when}
           onChange={this.handleInput}
         />
         <button>Add new item</button>

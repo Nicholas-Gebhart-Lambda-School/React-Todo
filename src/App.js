@@ -25,8 +25,11 @@ class App extends React.Component {
     });
   };
 
+  deleteItem = id => {
+    this.setState(this.state.list.filter(item => item.id !== id));
+  };
+
   render() {
-    console.log(this.state);
     return (
       <div className="container">
         <h1>To-Do List</h1>
@@ -37,7 +40,7 @@ class App extends React.Component {
           </div>
           <div className="flex-large">
             <h2>View items</h2>
-            <ItemTable list={this.state.list} />
+            <ItemTable list={this.state.list} deleteItem={this.deleteItem} />
           </div>
         </div>
       </div>
